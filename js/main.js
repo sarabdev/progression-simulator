@@ -84,3 +84,14 @@ function drawTimeline() {
     ).join('') +
     `</div>`;
 }
+
+
+function enforceNumericOnly(inputId) {
+  const el = document.getElementById(inputId);
+  el.addEventListener('input', () => {
+    el.value = el.value.replace(/[^0-9]/g, '');
+  });
+}
+
+enforceNumericOnly('current-pc');
+enforceNumericOnly('weekly-gain');
