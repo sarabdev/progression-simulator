@@ -14,7 +14,7 @@ fetch('./data/ranks.json')
       targetSelect.add(opt2);
     });
 
-    drawTimeline();
+   // drawTimeline();
   });
 
 function calculate() {
