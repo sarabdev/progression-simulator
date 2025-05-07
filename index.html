@@ -19,54 +19,68 @@
 
       <!-- Formulaire -->
       <form id="rankForm" class="space-y-6">
+        <!-- Grade actuel -->
         <div class="pb-4 border-b border-gray-200">
-          <label for="current-rank" class="block font-semibold text-black mb-1">
-            Grade actuel
-          </label>
-          <select
-            id="current-rank"
-            class="w-full p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]"
-            aria-label="Grade actuel"
-          ></select>
+          <label for="current-rank" class="block font-semibold text-black mb-1">Grade actuel</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <!-- Compass Icon -->
+              <svg class="h-5 w-5 text-[#003366]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 2a10 10 0 100 20 10 10 0 000-20zm3.31 6.41l-1.2 3.6a1 1 0 01-.63.63l-3.6 1.2 1.2-3.6a1 1 0 01.63-.63l3.6-1.2z" />
+              </svg>
+            </div>
+            <select id="current-rank" class="w-full pl-10 p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]" aria-label="Grade actuel"></select>
+          </div>
         </div>
 
+        <!-- Points actuels -->
         <div class="pb-4 border-b border-gray-200">
-          <label for="current-pc" class="block font-semibold text-black mb-1">
-            Points actuels (PC)
-          </label>
-          <input
-            id="current-pc"
-            type="number"
-            class="w-full p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]"
-            aria-label="Points actuels"
-            value="0"
-          />
+          <label for="current-pc" class="block font-semibold text-black mb-1">Points actuels (PC)</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <!-- Hashtag Icon -->
+              <svg class="h-5 w-5 text-[#003366]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 10h10M7 14h10M9 3l-3 18M18 3l-3 18" />
+              </svg>
+            </div>
+            <input id="current-pc" type="number" class="w-full pl-10 p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]" aria-label="Points actuels" value="0" />
+          </div>
         </div>
 
+        <!-- Gain hebdomadaire -->
         <div class="pb-4 border-b border-gray-200">
-          <label for="weekly-gain" class="block font-semibold text-black mb-1">
-            Gain hebdomadaire
-          </label>
-          <input
-            id="weekly-gain"
-            type="number"
-            class="w-full p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]"
-            aria-label="Gain hebdomadaire"
-            value="7"
-          />
+          <label for="weekly-gain" class="block font-semibold text-black mb-1">Gain hebdomadaire</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <!-- Trending Up Icon -->
+              <svg class="h-5 w-5 text-[#003366]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8" />
+              </svg>
+            </div>
+            <input id="weekly-gain" type="number" class="w-full pl-10 p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]" aria-label="Gain hebdomadaire" value="7" />
+          </div>
         </div>
 
+        <!-- Grade visé -->
         <div class="pb-4 border-b border-gray-200">
-          <label for="target-rank" class="block font-semibold text-black mb-1">
-            Grade visé
-          </label>
-          <select
-            id="target-rank"
-            class="w-full p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]"
-            aria-label="Grade visé"
-          ></select>
+          <label for="target-rank" class="block font-semibold text-black mb-1">Grade visé</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <!-- Target Icon -->
+              <svg class="h-5 w-5 text-[#003366]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12c2.21 0 4-1.79 4-4m0 0c0-2.21-1.79-4-4-4m4 4h4m-4 0v4m0-4H8m4 4v4" />
+              </svg>
+            </div>
+            <select id="target-rank" class="w-full pl-10 p-2 bg-[#f3f4f6] border rounded-md focus:ring-2 focus:ring-[#003366]" aria-label="Grade visé"></select>
+          </div>
         </div>
 
+        <!-- Bouton -->
         <button
           type="button"
           onclick="calculate()"
@@ -77,26 +91,15 @@
       </form>
 
       <!-- Résumé -->
-      <div
-        id="result"
-        class="hidden border-l-4 border-[#cc0000] bg-white p-4 shadow-sm rounded-md"
-      >
+      <div id="result" class="hidden border-l-4 border-[#cc0000] bg-white p-4 shadow-sm rounded-md">
         <div class="flex items-center mb-2">
           <span class="text-[#cc0000] mr-2 text-xl">ℹ️</span>
           <h2 class="text-lg font-semibold">Résumé</h2>
         </div>
-        <p class="font-mono text-black">
-          Total de PC requis : <span id="total-points"></span>
-        </p>
-        <p class="font-mono text-black">
-          PC restants : <span id="remaining-points"></span>
-        </p>
-        <p class="font-mono text-black">
-          Semaines nécessaires : <span id="weeks-required"></span>
-        </p>
-        <p class="font-mono text-black">
-          Date estimée de promotion : <span id="promotion-date"></span>
-        </p>
+        <p class="font-mono text-black">Total de PC requis : <span id="total-points"></span></p>
+        <p class="font-mono text-black">PC restants : <span id="remaining-points"></span></p>
+        <p class="font-mono text-black">Semaines nécessaires : <span id="weeks-required"></span></p>
+        <p class="font-mono text-black">Date estimée de promotion : <span id="promotion-date"></span></p>
       </div>
 
       <!-- Timeline -->
