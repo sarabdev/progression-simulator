@@ -24,7 +24,7 @@ function calculate() {
   const weeklyGain = parseInt(document.getElementById("weekly-gain").value) || 7;
 
   if (currentIndex >= targetIndex) {
-    alert("Target rank must be higher than current rank.");
+    alert("Le grade visé doit être supérieur au grade actuel.");
     return;
   }
 
@@ -32,7 +32,7 @@ function calculate() {
   let remainingPc = 0;
 
   for (let i = currentIndex; i < targetIndex; i++) {
-    const required = ranks[i].pc_required + 1; // +1 for promotion tax
+    const required = ranks[i].pc_required + 1; // +1 pour la promotion
     if (i === currentIndex) {
       const needed = required - currentPC;
       remainingPc += needed > 0 ? needed : 0;
@@ -40,7 +40,7 @@ function calculate() {
       remainingPc += required;
     }
     totalPcNeeded += required;
-    currentPC = 0; // PC resets after each promotion
+    currentPC = 0; // Réinitialisation des points après chaque promotion
   }
 
   const weeksRequired = Math.ceil(remainingPc / weeklyGain);
@@ -49,7 +49,12 @@ function calculate() {
   document.getElementById("total-points").textContent = totalPcNeeded;
   document.getElementById("remaining-points").textContent = remainingPc;
   document.getElementById("weeks-required").textContent = weeksRequired;
-  document.getElementById("promotion-date").textContent = promoDate.toDateString();
+  document.getElementById("promotion-date").textContent = promoDate.toLocaleDateString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
   document.getElementById("result").classList.remove("hidden");
 }
 
@@ -66,7 +71,8 @@ function getNthThursdayFromToday(n) {
 
 function drawTimeline() {
   const timeline = document.getElementById("timeline");
-  timeline.innerHTML = `<div class="flex space-x-4 items-center">` +
+  timeline.innerHTML =
+    `<div class="flex space-x-4 items-center">` +
     ranks.map((_, i) =>
       `<div class="text-center">
          <img src="./assets/badges/badge-${i + 1}.gif" class="w-10 h-10 mx-auto" alt="Badge ${i + 1}" />
