@@ -1,0 +1,14 @@
+[
+    { "rank": "Major de Police", "pc_required": 11 },
+    { "rank": "Lieutenant de Police", "pc_required": 21 },
+    { "rank": "Commandant de Police", "pc_required": 21 },
+    { "rank": "Commissaire Divisionnaire", "pc_required": 31 },
+    { "rank": "Contrôleur Général", "pc_required": 41 },
+    { "rank": "Contrôleur Général Élite", "pc_required": 51 },
+    { "rank": "Inspecteur Général", "pc_required": 61 },
+    { "rank": "Inspecteur Général Élite", "pc_required": 71 },
+    { "rank": "Directeur des Services Actifs", "pc_required": 81 },
+    { "rank": "Directeur Général de Police", "pc_required": 91 },
+    { "rank": "Préfet de Police", "pc_required": 101 }
+  ]
+  
