@@ -32,15 +32,17 @@ function calculate() {
   let remainingPc = 0;
 
   for (let i = currentIndex; i < targetIndex; i++) {
-    const required = ranks[i].pc_required + 1; // +1 pour la promotion
+    const required = ranks[i].pc_required;
+
     if (i === currentIndex) {
       const needed = required - currentPC;
       remainingPc += needed > 0 ? needed : 0;
     } else {
       remainingPc += required;
     }
+
     totalPcNeeded += required;
-    currentPC = 0; // Réinitialisation des points après chaque promotion
+    currentPC = 0; // Reset after promotion
   }
 
   const weeksRequired = Math.ceil(remainingPc / weeklyGain);
@@ -55,6 +57,7 @@ function calculate() {
     month: 'long',
     day: 'numeric'
   });
+
   document.getElementById("result").classList.remove("hidden");
 }
 
