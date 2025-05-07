@@ -20,7 +20,7 @@ fetch('./data/ranks.json')
 function calculate() {
   const currentIndex = parseInt(document.getElementById("current-rank").value);
   const targetIndex = parseInt(document.getElementById("target-rank").value);
-  const currentPC = parseInt(document.getElementById("current-pc").value) || 0;
+  let currentPC = parseInt(document.getElementById("current-pc").value) || 0;
   const weeklyGain = parseInt(document.getElementById("weekly-gain").value) || 7;
 
   if (currentIndex >= targetIndex) {
@@ -28,8 +28,21 @@ function calculate() {
     return;
   }
 
-  const totalPcNeeded = ranks[targetIndex].pc_required - ranks[currentIndex].pc_required;
-  const remainingPc = Math.max(totalPcNeeded - currentPC, 0);
+  let totalPcNeeded = 0;
+  let remainingPc = 0;
+
+  for (let i = currentIndex; i < targetIndex; i++) {
+    const required = ranks[i].pc_required + 1; // +1 for promotion tax
+    if (i === currentIndex) {
+      const needed = required - currentPC;
+      remainingPc += needed > 0 ? needed : 0;
+    } else {
+      remainingPc += required;
+    }
+    totalPcNeeded += required;
+    currentPC = 0; // PC resets after each promotion
+  }
+
   const weeksRequired = Math.ceil(remainingPc / weeklyGain);
   const promoDate = getNthThursdayFromToday(weeksRequired);
 
