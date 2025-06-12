@@ -185,6 +185,10 @@ document.getElementById("sector").addEventListener("change", (e) => {
   if (sector) {
     ranks = sector.ranks;
     populateCurrentRanks(ranks);
-    populateTargetRanks(ranks, -1);
+
+    // Clear target rank when sector changes
+    const targetSelect = document.getElementById("target-rank");
+    targetSelect.innerHTML =
+      "<option disabled selected>— Choisir un grade —</option>";
   }
 });
