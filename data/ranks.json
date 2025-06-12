@@ -1,0 +1,121 @@
+[
+  {
+    "sector": "Police Nationale",
+    "ranks": [
+      { "rank": "Major de Police", "pc_required": 11 },
+      { "rank": "Lieutenant de Police", "pc_required": 21 },
+      { "rank": "Commandant de Police", "pc_required": 21 },
+      { "rank": "Commissaire Divisionnaire", "pc_required": 31 },
+      { "rank": "Contrôleur Général", "pc_required": 41 },
+      { "rank": "Contrôleur Général Élite", "pc_required": 51 },
+      { "rank": "Inspecteur Général", "pc_required": 61 },
+      { "rank": "Inspecteur Général Élite", "pc_required": 71 },
+      { "rank": "Directeur des Services Actifs", "pc_required": 81 },
+      { "rank": "Directeur Général de Police", "pc_required": 91 },
+      { "rank": "Préfet de Police", "pc_required": 101 }
+    ]
+  },
+  {
+    "sector": "Gendarmerie Nationale",
+    "ranks": [
+      { "rank": "Brigadier / Brigadière", "pc_required": 10 },
+      { "rank": "Brigadier-chef / Brigadière-cheffe", "pc_required": 15 },
+      { "rank": "Adjudant / Adjudante", "pc_required": 20 },
+      { "rank": "Adjudant-chef / Adjudante-cheffe", "pc_required": 25 },
+      { "rank": "Chef d’escadron / Cheffe d’escadron", "pc_required": 30 },
+      {
+        "rank": "Chef d’escadron supérieur / Cheffe d’escadron supérieur",
+        "pc_required": 35
+      },
+      { "rank": "Général de brigade / Générale de brigade", "pc_required": 40 },
+      {
+        "rank": "Général de brigade supérieur / Générale de brigade supérieur",
+        "pc_required": 45
+      },
+      {
+        "rank": "Général de division / Générale de division",
+        "pc_required": 50
+      },
+      {
+        "rank": "Général de division supérieur / Générale de division supérieur",
+        "pc_required": 55
+      },
+      {
+        "rank": "Directeur des divisions / Directrice des divisions",
+        "pc_required": 60
+      }
+    ]
+  },
+  {
+    "sector": "Centre Hospitalier Universitaire",
+    "ranks": [
+      { "rank": "“Grade” supérieur / supérieure", "pc_required": 10 },
+      { "rank": "“Grade” supérieur II / supérieure II", "pc_required": 15 },
+      { "rank": "“Grade” expérimenté / expérimentée", "pc_required": 20 },
+      { "rank": "“Grade” expérimenté II / expérimentée II", "pc_required": 25 },
+      { "rank": "“Grade” cadre", "pc_required": 30 },
+      { "rank": "“Grade” cadre II", "pc_required": 35 },
+      {
+        "rank": "Chef d’équipe des “grades” / Cheffe d’équipe des “grades”",
+        "pc_required": 40
+      },
+      {
+        "rank": "Chef d’équipe des “grades” II / Cheffe d’équipe des “grades” II",
+        "pc_required": 45
+      },
+      {
+        "rank": "Directeur des “grades” / Directrice des “grades”",
+        "pc_required": 50
+      },
+      {
+        "rank": "Directeur des “grades” II / Directrice des “grades” II",
+        "pc_required": 55
+      },
+      {
+        "rank": "Directeur des services hospitaliers / Directrice des services hospitaliers",
+        "pc_required": 60
+      }
+    ]
+  },
+  {
+    "sector": "Centre Militaire",
+    "ranks": [
+      { "rank": "Sergent / Sergente", "pc_required": 10 },
+      { "rank": "Major", "pc_required": 15 },
+      { "rank": "Lieutenant / Lieutenante", "pc_required": 20 },
+      { "rank": "Capitaine", "pc_required": 25 },
+      { "rank": "Colonel", "pc_required": 30 },
+      { "rank": "Général / Générale", "pc_required": 35 },
+      {
+        "rank": "Général de corps d’armée / Générale de corps d’armée",
+        "pc_required": 40
+      },
+      { "rank": "Général d’armée / Générale d’armée", "pc_required": 45 },
+      {
+        "rank": "Contrôleur général de l’armée / Contrôleuse générale de l’armée",
+        "pc_required": 50
+      },
+      {
+        "rank": "Inspecteur de l’armée / Inspectrice de l’armée",
+        "pc_required": 55
+      },
+      { "rank": "Maréchal / Maréchale", "pc_required": 60 }
+    ]
+  },
+  {
+    "sector": "Filière Spécifique",
+    "ranks": [
+      { "rank": "Palier 1", "pc_required": 5 },
+      { "rank": "Palier 2", "pc_required": 10 },
+      { "rank": "Palier 3", "pc_required": 15 },
+      { "rank": "Palier 4", "pc_required": 20 },
+      { "rank": "Palier 5", "pc_required": 25 },
+      { "rank": "Palier 6", "pc_required": 30 },
+      { "rank": "Palier 7", "pc_required": 35 },
+      { "rank": "Palier 8", "pc_required": 40 },
+      { "rank": "Palier 9", "pc_required": 45 },
+      { "rank": "Palier 10", "pc_required": 50 },
+      { "rank": "Palier 11", "pc_required": 55 }
+    ]
+  }
+]

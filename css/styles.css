@@ -1,0 +1,11 @@
+/* Optional custom scrollbar or pixel-style tweaks */
+
+::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #003366;
+    border-radius: 3px;
+  }
+  

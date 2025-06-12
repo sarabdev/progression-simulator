@@ -1,0 +1,279 @@
+<!-- Projet codé par sami75.19 | Profite bien !! -->
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://i.imgur.com/FdQSIIm.png" />
+
+    <title>J'UP QUAND ?</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-[#f3f4f6] min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-md p-8 max-w-2xl w-full space-y-8">
+      <!-- Titre -->
+      <div
+        class="bg-gradient-to-r from-[#f0f9ff] via-white to-[#f0f9ff] p-6 rounded-2xl shadow-md text-center border border-[#cce7ff]"
+      >
+        <div class="flex items-center justify-center space-x-3">
+          <img
+            src="https://i.imgur.com/ofuilyY.png"
+            alt="Médaille RF"
+            class="h-10 w-10"
+          />
+          <h1
+            class="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#003366]"
+          >
+            Rank Simulator <span class="text-[#cc0000]">RF</span>
+          </h1>
+        </div>
+        <p class="mt-2 text-base sm:text-lg text-[#555] italic">
+          Calcule en un clic le chemin jusqu'à ta prochaine promotion !
+        </p>
+      </div>
+
+      <!-- Formulaire -->
+      <form id="rankForm" class="space-y-6">
+        <div
+          id="form-check"
+          class="hidden mt-4 text-green-600 flex items-center justify-center space-x-2"
+        >
+          <svg
+            class="h-6 w-6 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <span class="font-semibold">Formulaire complet</span>
+        </div>
+
+        <div class="pb-4 border-b border-gray-200">
+          <label for="sector" class="block font-semibold text-black mb-1"
+            >🏢 Secteur</label
+          >
+          <select
+            id="sector"
+            class="w-full p-2 bg-[#f3f4f6] border rounded-xl shadow-sm"
+          >
+            <option disabled selected>— Choisir votre secteur —</option>
+            <option value="Police Nationale">Police Nationale</option>
+            <option value="Gendarmerie Nationale">Gendarmerie Nationale</option>
+            <option value="Centre Hospitalier Universitaire">
+              Centre Hospitalier Universitaire
+            </option>
+            <option value="Centre Militaire">Centre Militaire</option>
+            <option value="Filière Spécifique">Filière Spécifique</option>
+          </select>
+        </div>
+
+        <!-- Grade actuel -->
+        <div class="pb-4 border-b border-gray-200">
+          <label for="current-rank" class="block font-semibold text-black mb-1"
+            >🎖️ Grade actuel</label
+          >
+          <div
+            class="flex items-center px-3 bg-[#f3f4f6] border rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-[#003366] transition"
+          >
+            <span class="text-[#003366] w-5 flex justify-center">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 1v4m0 0l-2 2m2-2l2 2m-2-2v13m0 0a4 4 0 110-8 4 4 0 010 8z"
+                />
+              </svg>
+            </span>
+            <select
+              id="current-rank"
+              class="flex-1 p-2 bg-[#f3f4f6] focus:outline-none"
+              aria-label="Grade actuel"
+            >
+              <option disabled selected>— Choisir un grade —</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Points actuels -->
+        <div class="pb-4 border-b border-gray-200">
+          <label for="current-pc" class="block font-semibold text-black mb-1"
+            >📦 Points actuels (PC)</label
+          >
+          <div
+            class="flex items-center px-3 bg-[#f3f4f6] border rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-[#003366] transition"
+          >
+            <span class="text-[#003366] w-5 flex justify-center">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 3l-3 18M18 3l-3 18M7 10h10M7 14h10"
+                />
+              </svg>
+            </span>
+            <input
+              id="current-pc"
+              type="number"
+              class="flex-1 p-2 bg-[#f3f4f6] focus:outline-none"
+              aria-label="Points actuels"
+              value=""
+            />
+          </div>
+        </div>
+
+        <!-- Gain hebdomadaire -->
+        <div class="pb-4 border-b border-gray-200">
+          <label for="weekly-gain" class="block font-semibold text-black mb-1"
+            >📈 Gain hebdomadaire estimé (en PC)</label
+          >
+          <div
+            class="flex items-center px-3 bg-[#f3f4f6] border rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-[#003366] transition"
+          >
+            <span class="text-[#003366] w-5 flex justify-center">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 17l6-6 4 4 8-8"
+                />
+              </svg>
+            </span>
+            <input
+              id="weekly-gain"
+              type="number"
+              class="flex-1 p-2 bg-[#f3f4f6] focus:outline-none"
+              aria-label="Gain hebdomadaire"
+              value=""
+            />
+          </div>
+        </div>
+
+        <!-- Grade visé -->
+        <div class="pb-4 border-b border-gray-200">
+          <label for="target-rank" class="block font-semibold text-black mb-1"
+            >🎯 Grade visé</label
+          >
+          <div
+            class="flex items-center px-3 bg-[#f3f4f6] border rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-[#003366] transition"
+          >
+            <span class="text-[#003366] w-5 flex justify-center">
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 12c2.21 0 4-1.79 4-4m0 0c0-2.21-1.79-4-4-4m4 4h4m-4 0v4m0-4H8m4 4v4"
+                />
+              </svg>
+            </span>
+            <select
+              id="target-rank"
+              class="flex-1 p-2 bg-[#f3f4f6] focus:outline-none"
+              aria-label="Grade visé"
+            >
+              <option disabled selected>— Choisir un grade —</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Bouton -->
+        <button
+          id="calculate-button"
+          type="button"
+          onclick="calculate()"
+          class="w-full bg-[#003366] text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:bg-[#002244] focus:outline-none focus:ring-2 focus:ring-[#003366] focus:ring-offset-2 transition transform active:scale-95 cursor-pointer"
+        >
+          Calculer
+        </button>
+      </form>
+
+      <!-- Résumé -->
+      <div
+        id="result"
+        class="hidden border-l-4 border-[#003366] bg-white p-6 shadow-md rounded-xl space-y-4"
+      >
+        <div class="flex items-center mb-2">
+          <span class="text-[#003366] mr-2 text-2xl">📊</span>
+          <h2 class="text-xl font-semibold text-[#003366]">
+            Résultat de la simulation
+          </h2>
+        </div>
+
+        <!-- Date estimée de promotion - mise en avant -->
+        <div
+          class="bg-[#f0f9ff] border-l-4 border-[#87CEFA] p-4 rounded-md shadow-sm"
+        >
+          <p
+            class="text-[#003366] text-lg font-bold flex flex-wrap gap-2 items-center"
+          >
+            📅 Date estimée de promotion :
+            <span
+              id="promotion-date"
+              class="text-[#cc0000] font-extrabold text-xl"
+            ></span>
+          </p>
+        </div>
+
+        <!-- Autres infos -->
+        <p class="font-mono text-black">
+          🧮 Total de PC requis :
+          <span
+            id="total-points"
+            class="ml-1 text-[#003366] font-semibold"
+          ></span>
+        </p>
+        <p class="font-mono text-black">
+          ⏳ PC restants :
+          <span
+            id="remaining-points"
+            class="ml-1 text-[#003366] font-semibold"
+          ></span>
+        </p>
+        <p class="font-mono text-black">
+          📈 Semaines nécessaires :
+          <span
+            id="weeks-required"
+            class="ml-1 text-[#003366] font-semibold"
+          ></span>
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <!-- <div id="timeline" class="overflow-x-auto mt-6">
+      </div> -->
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
